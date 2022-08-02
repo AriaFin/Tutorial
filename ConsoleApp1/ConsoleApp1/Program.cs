@@ -6,6 +6,10 @@ TestLimits();
 
 WorkWithDoubles();
 
+WorkingWithDecimals();
+
+CalculateAreaOfAUserDefinedCircle();
+
 void WorkWithIntegers()
 {
     int a = 18;
@@ -82,4 +86,41 @@ void WorkWithDoubles()
 
     double third = 1.0 / 3.0;
     Console.WriteLine(third);
+}
+
+void WorkingWithDecimals()
+{
+    decimal min = decimal.MinValue;
+    decimal max = decimal.MaxValue;
+    Console.WriteLine($"the range of the decimal type is {min} to {max}");
+
+    double a = 1.0;
+    double b = 3.0;
+    Console.WriteLine(a / b);
+
+    decimal c = 1.0M;
+    decimal d = 3.0M;
+    Console.WriteLine(c / d);
+}
+
+void CalculateAreaOfACircle(double radius)
+{
+    double area = radius * radius * Math.PI;
+    Console.WriteLine($"The area of a circle with a radius {radius} is {area}");
+}
+
+void CalculateAreaOfAUserDefinedCircle()
+{
+    Console.WriteLine("Enter radius:");
+    string input = Console.ReadLine();
+    double rad;
+    bool ok = Double.TryParse(input, out rad);
+    if (!ok)
+    {
+        Console.WriteLine($"This is not a number: {input}");
+    }
+    else
+    {
+        CalculateAreaOfACircle(rad);
+    }
 }
