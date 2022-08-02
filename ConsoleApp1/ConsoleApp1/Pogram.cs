@@ -11,20 +11,20 @@ void BranchesAndLoops()
 
     ExploreLoops();
 
-    SumIntegetrsBetween1And20ThatAreDivisibleBy3();
+    SumStreamOfIntegersDivisibleBy(1, 20, 3);
 }
 
-void SumIntegetrsBetween1And20ThatAreDivisibleBy3()
+void SumStreamOfIntegersDivisibleBy(int min, int max, int divisor)
 {
     int sum = 0;
-    for (int index = 1; index < 21; index++)
+    for (int index = min; index < max + 1; index++)
     {
-        if (index %3 == 0)
+        if (index %divisor == 0)
         {
             sum = sum + index;
         }
     }
-    Console.WriteLine($"the sum of all the numbers 1-20 divisible by 3 is {sum}");
+    Console.WriteLine($"the sum of all the numbers {min} to {max} divisible by {divisor} is {sum}");
 }
 
 void ExploreIf()
